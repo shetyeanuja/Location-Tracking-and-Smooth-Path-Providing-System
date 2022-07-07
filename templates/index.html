@@ -1,0 +1,349 @@
+
+<!DOCTYPE hTmL>
+<html>
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body{
+              background-image:url("https://image.shutterstock.com/image-photo/beautiful-view-scenic-road-alaska-260nw-1812650770.jpg");
+              background-repeat:no-repeat;
+              background-size:cover;
+            }
+            div.details {
+              background-color: purple;
+              color:white;
+              text-align:center;
+              width: 82%;
+              margin: auto;
+              border-radius: 10px;
+              /* display: flex; */
+            }
+          
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                border: 3px solid grey;
+                /* border: 2px solid yellowgreen; */
+                border-radius: 21px;
+                justify-content: center;
+                /* padding: 3%; */
+                margin: auto;
+                align-items: center;
+                height:365px;
+                /* display: none; */
+                position: relative;
+               
+                background-color:#e1ecfc;
+                animation-name: display;
+                animation-duration: 1s;
+                animation-timing-function: ease-in;
+                /* transform: skew(360deg); */
+                
+            }
+            .map {
+              width: 100%;
+              margin: 1%;
+              height: 450px;
+
+            }
+            @keyframes display {
+                0% {
+                    transform: scale(0);
+                }
+                
+                50% {
+                    transform: scale(1);
+                }
+            }
+
+            form div {
+                display: flex;
+                flex-direction: column;
+                
+                align-items: center;
+                /* margin: auto 10%; */
+                width: 100%;
+                height: 100%;
+                justify-content: space-around;
+                
+                /* margin-left: 30%; */
+            }
+            form div>input {
+                border-radius: 5px;
+                padding: 2px;
+            }
+            form div>label {
+                color: black;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+            form div>input {
+                width: 60%;
+            }
+            form input[type=submit] {
+                /* width: 35%; */
+                background-color: #55d4c9;
+                padding: 5px;
+                border-radius: 10px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-top:30px;
+                margin-bottom:20px;
+
+            }
+            .loader {
+                width: 100%;
+                height: 100%;
+                color: yellow;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color:blue;
+                
+                
+            }
+            .loader div {
+                display:inline;
+                position: relative;
+                font-size: 38px;
+               
+            }
+
+            div.ok {
+              display:none;
+            }
+            .loader li,.ok li {
+                list-style: none;
+                font-size: 3.2rem;
+                padding: 0px;
+                /* border: 1px solid red; */
+                text-align: center;
+                display:none;
+            } 
+            li .spinner-border {
+              display: none;
+              margin: auto;
+            }
+            .GFG{
+              background-color:#55d4c9;
+              border:2px solid black;
+              color:black;
+              padding:5px 10px;
+              text-align:center;
+              font-size:20px;
+              display:block;
+              margin: auto;
+              cursor:pointer;
+              /* margin-left:660px;
+              margin-top:44px; */
+            }
+
+            nav.navbar {
+                width: 100%;
+                
+            }
+            a {
+                display: block;
+                margin: auto;
+            }
+
+            .autocomplete-container1 {
+  /*the container must be positioned relative:*/
+  position: relative;
+  
+  margin-bottom: 20px;
+}
+
+.autocomplete-container1 input, .autocomplete-container2 input {
+  width: calc(100% - 43px);
+  outline: none;
+  
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  padding-right: 31px;
+  font-size: 16px;
+}
+/* rgba(0, 0, 0, 0.1) */
+.autocomplete-items1 {
+  position: absolute;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(48, 50, 129, 0.1); */
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: calc(100% + 50px);
+  left: 0;
+  right: 0;
+  /* border-top: 2px black; */
+  background-color: #fff;
+}
+
+.autocomplete-items2 {
+  position: absolute;
+
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1);
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: calc(100% - 120px);
+  left: 0;
+  right: 0;
+  
+  background-color: #fff;
+}
+
+.autocomplete-items1 div, .autocomplete-items2 div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.autocomplete-items1 div:hover, .autocomplete-items2 div:hover {
+  /*when hovering an item:*/
+  background-color: rgba(75, 16, 214, 0.5);
+  z-index: 100;
+  color: white;
+}
+
+.autocomplete-items1 .autocomplete-active, .autocomplete-items2 .autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.clear-button {
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  
+  position: absolute;
+  right: 5px;
+  top: 0;
+
+  height: 100%;
+  display: none;
+  align-items: center;
+}
+
+.clear-button.visible {
+  display: flex;
+}
+
+
+.clear-button:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+            @media only screen and (max-width: 576px) {
+                nav.navbar {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }    
+                nav.navbar ul {
+                    width: 100%;
+                }
+            }
+            
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+       
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark w-100">
+            <ul class="navbar-nav d-flex justify-content-between">
+                <li class="nav-item"><a class="nav-link text-danger" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <!-- <h1>Search the location you want to Travel!</h1> -->
+        {% if location|length==0 %}
+        
+          <form class="form mt-4" method='POST' onsubmit="display()">
+            <div>
+                  <label>Source location:</label>
+                  <input type="text" placeholder="Enter the Source location" class='i1' name='source' required/>
+                  <!-- <div class="autocomplete-container1" id="autocomplete-container1"></div> -->
+              </div>
+              <div>
+                  <label>Destination location:</label>
+                  <input type="text" placeholder="Enter the Destination location" class='i2' name='destination' required/> 
+                  <!-- <div class="autocomplete-container2" id="autocomplete-container2"></div> -->
+              </div>
+              <input type="submit" class="submit"  value="Submit" onclick="display();">
+             
+          </form>
+        {% endif %}
+         <a href=map  download><button class="GFG">Track Yourself</button></a>
+        <div class="ok" >
+          <li style="display:none;"><div class="clock-loader spinner-border text-warning"></div>Please wait until the Optimized route is generated!</li>
+        </div>  
+          <div class='mt-3 details'>
+            {% if location|length>0 %}
+                <h3>Source location - {{location[0]}}, Destination location - {{location[1]}}</h3>
+                <h4>The total Travel Time from {{ location[0].capitalize() }} to {{ location[1].capitalize() }} is approximately {% if travel_time<60 %}
+                {{ travel_time%60 }} minutes!
+          {% else %}
+              {{ travel_time//60 }} hours {% if travel_time%60!=0 %} {{ travel_time%60 }} minutes! {% endif %}
+          {% endif %} </h4>
+            {% endif %}
+          </div>  
+          
+          <div class='container map'>
+            {% if div_placeholder!=None  %}
+                  {% set loader = False %}
+                  <script>
+                    document.querySelector('div.ok').classList.remove("loader");
+                    document.querySelector('.ok li').style.display="none";
+                    document.querySelector('div.ok div').style.display="none";
+                    document.querySelector('div.ok').style.display="none";
+                  </script>
+                  {{ div_placeholder| safe }}   
+            {% endif %}
+
+          </div>
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+    <script>
+        function display(event) {
+          document.querySelector('div.ok').classList.add("loader");
+          document.querySelector('div.ok').style.display="flex";
+          document.querySelector('.loader li').style.display="block";
+          document.querySelector('li .spinner-border').style.display="block";
+          var msg = new SpeechSynthesisUtterance('Building optimized route please hold on. Fetching neighbourhoods please hold on');
+          window.speechSynthesis.speak(msg);
+          
+        
+      }
+        document.querySelector('input.submit').addEventListener("submit",display);
+        var requestOptions = {
+          method: 'GET',
+        };
+
+        
+    
+    </script>
+   
+</html>
