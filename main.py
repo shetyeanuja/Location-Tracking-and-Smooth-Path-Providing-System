@@ -31,12 +31,11 @@ import requests,json
 import geopy.distance
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-# ritik opencage - c8dd5bcbf8fc4a32a1e4d658123f54fc
 
 #Weather and temperature conditions of source and destination using openweathermap api
 def weather(city):
 
-    api_key = "be2c186e8f4283d29b95c5175dacbddc"
+    api_key = "YOUR OPENWEATHERMAP API KEY"
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
   
     complete_url = base_url + "appid=" + api_key + "&q=" + city
@@ -60,7 +59,7 @@ def weather(city):
 
 def distanceMatrix(origin, destination):
 
-    token = "2OX4HduEBS5wOMli4cMYUkzpYwFAR"
+    token = "YOUR DISTANCEMATRIX API KEY"
     base_url = "https://api.distancematrix.ai/maps/api/distancematrix/json?"
   
     complete_url = base_url + "origins=" + str(origin[0])+","+str(origin[1]) + "&destinations=" + str(destination[0])+","+str(destination[1])+"&key="+token
@@ -103,7 +102,7 @@ def index():
       print(locn)
         
       #Using opencage api for converting physical address into coordinates
-      key = '049e6fb09005450884e33ab899d4ecaa'
+      key = 'YOUR OPENCAGE API KEY'
       geocoder = OpenCageGeocode(key)
       query1 = source_locn
       query2 = dest_locn
